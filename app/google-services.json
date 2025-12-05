@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1080023691356",
+    "project_id": "aplicacionotas-6bcfe",
+    "storage_bucket": "aplicacionotas-6bcfe.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080023691356:android:cd86fc9792fc98b250f699",
+        "android_client_info": {
+          "package_name": "mx.edu.utng.grgc.aplicacionotas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCklT0k1vagFBd5pmMM80mohpa3GepVit8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
