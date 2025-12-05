@@ -8,6 +8,16 @@ https://drive.google.com/drive/folders/1g9OZqVounVnuPw_v7FIvQEQ9XLudIh8r?usp=sha
 
 ---
 
+## 📹 Video de tik tok
+
+https://vt.tiktok.com/ZSfwAtbry/
+
+---
+
+---
+## ⬇️ descarga aplicacion 
+https://gael-carrillo.github.io/palicacion-apk-notas/
+
 ## 🚀 Características
 
 - ✅ Crear, editar y eliminar notas  
