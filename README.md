@@ -3,7 +3,7 @@
 Aplicación móvil Android para gestionar notas personales con categorías y prioridades, desarrollada en **Kotlin** con **Firebase**.
 
 ---
-## dejare un link para que descarguen el manual 
+## dejare un link para que descarguen el manual completo
 https://drive.google.com/drive/folders/1g9OZqVounVnuPw_v7FIvQEQ9XLudIh8r?usp=sharing
 
 ---
@@ -313,6 +313,15 @@ object DefaultCategories {
     fun getAll() = listOf(PERSONAL, TRABAJO, ESTUDIO, IDEAS, COMPRAS)
 }
 ```
+---
+
+### 📖 Explicación rápida
+- **Category**: modelo que define una categoría con `nombre`, `colorHex` y `emoji`.  
+- **toColor()**: convierte el `colorHex` en un objeto `Color` de Compose.  
+- **DefaultCategories**: incluye categorías predefinidas como *Personal*, *Trabajo*, *Estudio*, *Ideas* y *Compras*.  
+
+---
+
 - `Note.kt` → Modelo de notas
   ## 📌 Modelo de Nota
 
@@ -432,7 +441,19 @@ enum class Priority(
         }
     }
 }
-```  
+```
+---
+
+### 📖 Explicación rápida
+- **Priority**: enum con tres valores (`ALTA`, `MEDIA`, `BAJA`).  
+- Cada prioridad tiene:
+  - `displayName`: nombre legible.  
+  - `colorHex`: color asociado en formato hexadecimal.  
+- **toColor()**: convierte el `colorHex` en un objeto `Color` de Compose.  
+- **fromString()**: transforma un `String` en el enum correspondiente (útil al leer datos de Firebase).  
+
+---
+
 - `User.kt` → Modelo de usuario
 - ## 👤 Modelo de Usuario
 
@@ -469,6 +490,20 @@ data class User(
     constructor() : this("", "", "", 0L)
 }
 ````
+
+---
+
+### 📖 Explicación rápida
+- **User** es el modelo que define a cada usuario dentro de la app.  
+- Incluye:
+  - `id`: generado automáticamente por Firebase.  
+  - `nombre`: nombre visible del usuario.  
+  - `email`: correo electrónico asociado.  
+  - `createdAt`: fecha de creación del registro.  
+- El **constructor vacío** es obligatorio para que Firebase pueda deserializar el objeto correctamente.  
+
+---
+
 - `FirebaseRepository.kt` → CRUD y autenticación con Firebase
 - ## 🏪 Firebase Repository
 
@@ -769,6 +804,16 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     }
 }
 ```
+
+---
+
+### 📖 Explicación rápida
+- **NotificationReceiver**: escucha eventos programados y dispara notificaciones.  
+- **Intent extras**: se usan para pasar datos como `NOTIFICATION_ID`, `TITLE`, `MESSAGE`.  
+- **showScheduledNotification()**: aquí implementas la lógica real de la notificación (canal, builder, manager).  
+
+---
+
 - `NotificationReceiver.kt` → Notificaciones programadas
 - ## ⏰ NotificationReceiver
 
@@ -819,15 +864,17 @@ class NotificationReceiver : BroadcastReceiver() {
     }
 }
  
-
+```
 ---
 
-## 👨‍💻 Autor
-
-Proyecto desarrollado como parte de **Game01 - Juego de Plataformas 2D Funcional** y extendido para la **Aplicación de Notas**.  
+### 📖 Explicación rápida
+- **Plugins**: Android Application, Kotlin, Compose y Google Services.  
+- **Android config**: namespace, SDKs, versiones, ProGuard y compatibilidad con Java 11.  
+- **Dependencias principales**:
+  - Jetpack Compose (UI moderna).  
+  - Firebase (Auth, Firestore, Messaging).  
+  - Coroutines (manejo asíncrono).  
+  - WorkManager (notificaciones programadas).  
+  - Testing (JUnit, Espresso, Compose Testing).  
 
 ---
-
-## 📄 Licencia
-
-Este proyecto está bajo la licencia MIT. Puedes usarlo, modificarlo y distribuirlo libremente.
